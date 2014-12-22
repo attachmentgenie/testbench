@@ -1,0 +1,34 @@
+{
+    "name": "inuits/db-perf-test",
+    "description": "test framework to keep track of troublesome queries\"",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Bram Vogelaar",
+            "email": "attachmentgenie@inuits.eu"
+        }
+    ],
+    "require": {
+        "cilex/cilex": "~1.1",
+        "ext-mongo": "~1.5"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "~4.4"
+    },
+    "bin": [
+        "phpunit"
+    ],
+    "config": {
+        "bin-dir": "bin"
+    },
+    "autoload": {
+        "classmap": [
+            "src/"
+        ]
+    },
+    "autoload-dev": {
+        "classmap": [
+            "tests/"
+        ]
+    }
+}
