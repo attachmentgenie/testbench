@@ -25,6 +25,7 @@ if (!defined('PHPUNIT_COMPOSER_INSTALL')) {
 
 require PHPUNIT_COMPOSER_INSTALL;
 
-$app = new \Cilex\Application('db-perf-test', '1.0.0');
-$app->command(new \inuits\dbperf\command\MongoRunCommand());
+$app = new \Cilex\Application('testbench', '1.0.0');
+$app->command(new \attachmentgenie\testbench\command\TestCommand());
+$app->command(new \attachmentgenie\testbench\command\MongoPhpCommand());
 $app->run();

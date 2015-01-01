@@ -1,5 +1,5 @@
 {
-    "name": "inuits/db-perf-test",
+    "name": "attachmentgenie/testbench",
     "description": "test framework to keep track of troublesome queries\"",
     "license": "MIT",
     "authors": [
@@ -10,13 +10,13 @@
     ],
     "require": {
         "cilex/cilex": "~1.1",
-        "ext-mongo": "~1.5"
-    },
-    "require-dev": {
-        "phpunit/phpunit": "~4.4"
+        "ext-mongo": "~1.5",
+        "phpunit/phpunit": "~4.4",
+        "zumba/mongounit": "~1.2",
+        "bylexus/php-prereqcheck": "0.2.*"
     },
     "bin": [
-        "phpunit"
+        "testbench"
     ],
     "config": {
         "bin-dir": "bin"
