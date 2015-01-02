@@ -22,7 +22,7 @@ namespace attachmentgenie\testbench\php;
  * @license  Apache 2.0
  * @link     https://github.com/attachmentgenie/testbench
  */
-class PrereqTesterTest extends \PHPUnit_Framework_TestCase
+class TestDbT extends \PHPUnit_Framework_TestCase
 {
     /**
      * Placeholder test

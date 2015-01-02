@@ -8,11 +8,12 @@ php:
   - hhvm
 
 before_script:
+  - echo "extension = mongo.so" >> ~/.phpenv/versions/$(phpenv version-name)/etc/php.ini
   - travis_retry composer self-update
   - travis_retry composer install --no-interaction --prefer-source --dev
 
 script:
-  - ./bin/phpunit --coverage-text --coverage-clover=coverage.clover
+  - ./bin/phpunit -c phpunit.xml.dist --coverage-text --coverage-clover=coverage.clover
   - ./bin/phpcs src/ tests/
 
 after_script:
