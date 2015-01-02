@@ -29,12 +29,12 @@ class Test
 
     /**
      * Run the check provided.
-     * 
+     *
      * @param Check $check Check to execute
-     * 
+     *
      * @return boolean|null
      */
-    static function check (Check $check) 
+    static function check (Check $check)
     {
 
         return $check->run();

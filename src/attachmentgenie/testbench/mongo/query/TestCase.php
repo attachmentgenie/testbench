@@ -33,11 +33,13 @@ class TestCase extends MongoTestCase
     /**
      * Return connection to mongo server.
      *
-     * @return \MongoClient
+     * @return Zumba\PHPUnit\Extensions\Mongo\Client\Connector
      */
-    public function getConnection()
-    {
-        return new \MongoClient();
+    public function getConnection() {
+        if (empty($this->connection)) {
+            $this->connection = new \Zumba\PHPUnit\Extensions\Mongo\Client\Connector(new \MongoClient());
+        }
+        return $this->connection;
     }
 
     /**
@@ -47,8 +49,8 @@ class TestCase extends MongoTestCase
      */
     public function getDataSet()
     {
-        if (empty($this->datasetdataSet)) {
-            $this->datasetdataSet = new DataSet($this->getConnection());
+        if (empty($this->dataset)) {
+            $this->dataSet = new DataSet($this->getConnection());
         }
         return $this->dataset;
     }
