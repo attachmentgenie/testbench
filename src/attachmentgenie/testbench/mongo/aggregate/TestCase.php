@@ -45,7 +45,7 @@ class TestCase extends MongoTestCase
     /**
      * Return connection to mongo server.
      *
-     * @return \Zumba\PHPUnit\Extensions\Mongo\Client\Connector
+     * @return Zumba\PHPUnit\Extensions\Mongo\Client\Connector
      */
     public function getConnection()
     {
@@ -58,7 +58,7 @@ class TestCase extends MongoTestCase
     /**
      * Return mongo dataset.
      *
-     * @return mixed
+     * @return Zumba\PHPUnit\Extensions\Mongo\DataSet\DataSet
      */
     public function getDataSet()
     {
