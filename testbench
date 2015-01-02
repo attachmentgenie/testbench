@@ -26,6 +26,6 @@ if (!defined('PHPUNIT_COMPOSER_INSTALL')) {
 require PHPUNIT_COMPOSER_INSTALL;
 
 $app = new \Cilex\Application('testbench', '1.0.0');
-$app->command(new \attachmentgenie\testbench\command\TestCommand());
+$app->command(new \attachmentgenie\testbench\command\DbTestCommand());
 $app->command(new \attachmentgenie\testbench\command\MongoPhpCommand());
 $app->run();

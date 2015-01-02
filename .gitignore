@@ -4,11 +4,13 @@
 
 # PHPUnit
 /phpunit.xml
+/db-test.xml
+/build/
+/db-test.html
 
 # Composer
 /composer.lock
 /composer.phar
-/build/
 
 # ide
 /.project

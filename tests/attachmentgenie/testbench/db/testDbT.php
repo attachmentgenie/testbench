@@ -1,11 +1,11 @@
 <?php
 
-namespace inuits\dbperf\mongo;
+namespace attachmentgenie\testbench\php;
 
-class MongoRunTest extends \PHPUnit_Framework_TestCase
+class testDbT extends \PHPUnit_Framework_TestCase
 {
 
-    public function testRunTests()
+    public function testRun()
     {
         $this->markTestIncomplete(
             'This test has not been implemented yet.'

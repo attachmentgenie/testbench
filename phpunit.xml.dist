@@ -5,8 +5,8 @@
          verbose="true">
 
   <testsuites>
-    <testsuite name="ProjectName">
-      <directory suffix="Test.php">tests/inuits/dbperf/mongo</directory>
+    <testsuite name="testbench">
+      <directory suffix="Test.php">tests/attachmentgenie/testbench/php</directory>
     </testsuite>
   </testsuites>
 
@@ -20,6 +20,9 @@
   <filter>
     <whitelist addUncoveredFilesFromWhitelist="true">
       <directory suffix=".php">src</directory>
+      <exclude>
+        <directory suffix=".php">src/attachmentgenie/testbench/command</directory>
+      </exclude>
     </whitelist>
   </filter>
 </phpunit>
