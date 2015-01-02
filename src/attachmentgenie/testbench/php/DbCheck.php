@@ -38,7 +38,7 @@ abstract class DbCheck
      *
      * @param string $config Configuration file
      */
-    function __construct($config) 
+    function __construct($config)
     {
         if (file_exists($config)) {
             $this->config = realpath($config);
@@ -57,7 +57,7 @@ abstract class DbCheck
      * @return bool
      * @throws \Exception
      */
-    public function run() 
+    public function run()
     {
         $pc = new PrereqChecker();
 
