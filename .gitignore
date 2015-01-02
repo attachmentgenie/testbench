@@ -6,10 +6,10 @@
 /phpunit.xml
 /db-test.xml
 /build/
+/coverage.clover
 /db-test.html
 
 # Composer
-/composer.lock
 /composer.phar
 
 # ide
