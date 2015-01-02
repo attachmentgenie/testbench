@@ -15,6 +15,7 @@ namespace attachmentgenie\testbench\mongo\aggregate;
 
 use Zumba\PHPUnit\Extensions\Mongo\DataSet\DataSet;
 use Zumba\PHPUnit\Extensions\Mongo\TestCase as MongoTestCase;
+use Zumba\PHPUnit\Extensions\Mongo\Client\Connector;
 
 /**
  * Simple test framework.
@@ -27,17 +28,29 @@ use Zumba\PHPUnit\Extensions\Mongo\TestCase as MongoTestCase;
  */
 class TestCase extends MongoTestCase
 {
+    /**
+     * Mongo connection.
+     *
+     * @var Connector
+     */
+    protected $connection;
 
+    /**
+     * Mongo dataset.
+     *
+     * @var DataSet
+     */
     protected $dataset;
 
     /**
      * Return connection to mongo server.
      *
-     * @return Zumba\PHPUnit\Extensions\Mongo\Client\Connector
+     * @return \Zumba\PHPUnit\Extensions\Mongo\Client\Connector
      */
-    public function getConnection() {
+    public function getConnection()
+    {
         if (empty($this->connection)) {
-            $this->connection = new \Zumba\PHPUnit\Extensions\Mongo\Client\Connector(new \MongoClient());
+            $this->connection = new Connector(new \MongoClient());
         }
         return $this->connection;
     }
