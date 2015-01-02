@@ -28,7 +28,7 @@ interface Check
     /**
      * Test the defined parameters.
      *
-     * @return mixed
+     * @return boolean|null
      */
     public function run();
 }

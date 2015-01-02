@@ -35,7 +35,7 @@ class TestCase extends MongoTestCase
      *
      * @return \MongoClient
      */
-    public function getConnection() 
+    public function getConnection()
     {
         return new \MongoClient();
     }
@@ -45,7 +45,7 @@ class TestCase extends MongoTestCase
      *
      * @return mixed
      */
-    public function getDataSet() 
+    public function getDataSet()
     {
         if (empty($this->datasetdataSet)) {
             $this->datasetdataSet = new DataSet($this->getConnection());
