@@ -13,9 +13,9 @@
 
 namespace attachmentgenie\testbench\mongo\query;
 
+use Zumba\PHPUnit\Extensions\Mongo\Client\Connector;
 use Zumba\PHPUnit\Extensions\Mongo\DataSet\DataSet;
 use Zumba\PHPUnit\Extensions\Mongo\TestCase as MongoTestCase;
-use Zumba\PHPUnit\Extensions\Mongo\Client\Connector;
 
 /**
  * Simple test framework.
@@ -45,7 +45,7 @@ class TestCase extends MongoTestCase
     /**
      * Return connection to mongo server.
      *
-     * @return Zumba\PHPUnit\Extensions\Mongo\Client\Connector
+     * @return Connector
      */
     public function getConnection()
     {
@@ -58,12 +58,12 @@ class TestCase extends MongoTestCase
     /**
      * Return mongo dataset.
      *
-     * @return Zumba\PHPUnit\Extensions\Mongo\DataSet\DataSet
+     * @return DataSet
      */
     public function getDataSet()
     {
         if (empty($this->dataset)) {
-            $this->dataSet = new DataSet($this->getConnection());
+            $this->dataset = new DataSet($this->getConnection());
         }
         return $this->dataset;
     }
