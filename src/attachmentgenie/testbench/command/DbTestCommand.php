@@ -13,12 +13,12 @@
 
 namespace attachmentgenie\testbench\command;
 
-use attachmentgenie\testbench\Test;
-use attachmentgenie\testbench\db\TestRunner;
+use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
-use Symfony\Component\Console\Command\Command;
+use attachmentgenie\testbench\Test;
+use attachmentgenie\testbench\db\TestRunner;
 
 /**
  * Simple test framework.

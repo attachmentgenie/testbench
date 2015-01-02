@@ -32,7 +32,7 @@ class Test
      * 
      * @param Check $check Check to execute
      * 
-     * @return mixed
+     * @return boolean|null
      */
     static function check (Check $check) 
     {

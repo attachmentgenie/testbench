@@ -54,10 +54,10 @@ class TestRunner implements Check
     /**
      * Read configuration file, and run check.
      *
-     * @return bool
+     * @return boolean|null
      * @throws \Exception
      */
-    public function run() 
+    public function run()
     {
 
         $command = new \PHPUnit_TextUI_Command();

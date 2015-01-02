@@ -54,7 +54,7 @@ abstract class DbCheck
     /**
      * Read configuration file, and run check.
      *
-     * @return bool
+     * @return null|boolean
      * @throws \Exception
      */
     public function run()
