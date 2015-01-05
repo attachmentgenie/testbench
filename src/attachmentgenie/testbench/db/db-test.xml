@@ -10,7 +10,7 @@
 
   <testsuites>
     <testsuite name="db-test">
-      <directory suffix="DbT.php">../../../../../tests</directory>
+      <directory suffix="TbT.php">../../../../../tests</directory>
     </testsuite>
   </testsuites>
 
