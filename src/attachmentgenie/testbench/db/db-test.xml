@@ -5,12 +5,12 @@
          verbose="true">
 
   <logging>
-    <log type="testdox-html" target="../../../../../db-test.html"/>
+    <log type="testdox-html" target="../../../../../../../db-test.html"/>
   </logging>
 
   <testsuites>
-    <testsuite name="db-test">
-      <directory suffix="TbT.php">../../../../../tests</directory>
+    <testsuite name="testbench">
+      <directory suffix="TbT.php">../../../../../../../tests</directory>
     </testsuite>
   </testsuites>
 

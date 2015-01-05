@@ -11,7 +11,7 @@
  * @link     https://github.com/attachmentgenie/testbench
  */
 
-namespace attachmentgenie\testbench\php;
+namespace attachmentgenie\testbench\db;
 
 /**
  * Placeholder test
@@ -22,7 +22,7 @@ namespace attachmentgenie\testbench\php;
  * @license  Apache 2.0
  * @link     https://github.com/attachmentgenie/testbench
  */
-class TestDbT extends \PHPUnit_Framework_TestCase
+class TestTbT extends \PHPUnit_Framework_TestCase
 {
     /**
      * Placeholder test
