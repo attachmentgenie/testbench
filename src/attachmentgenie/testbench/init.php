@@ -36,6 +36,9 @@ class init
         if (!file_exists('tests')) {
             mkdir(getcwd() . '/tests', 0777, true);
         }
+        if (!file_exists('tests/TestTbT.php')) {
+            copy(__DIR__ . '/files/TestTbT.php', getcwd() . '/tests/TestTbT.php');
+        }
         echo "Done...\n";
         echo "Creating db-test.xml.dist...\n";
         if (!file_exists('db-test.xml.dist')) {
