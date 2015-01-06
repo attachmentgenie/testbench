@@ -1,6 +1,6 @@
 <?php
 /**
- * Simple test framework.
+ * Create a basic testbench setup.
  *
  * PHP version 5
  *
@@ -16,7 +16,7 @@ namespace attachmentgenie\testbench;
 use attachmentgenie\testbench\Check;
 
 /**
- * Simple test framework.
+ * Create a basic testbench setup.
  *
  * @category Attachmentgenie
  * @package  Testbench
@@ -24,19 +24,24 @@ use attachmentgenie\testbench\Check;
  * @license  https://github.com/attachmentgenie/testbench/LICENSE Apache 2.0
  * @link     https://github.com/attachmentgenie/testbench
  */
-class Test
+class init
 {
-
     /**
-     * Run the check provided.
-     *
-     * @param Check $check Check to execute
-     *
-     * @return boolean|null
+     * Create directories and files to start testbench.
      */
-    static function check (Check $check)
+    static function run ()
     {
+        if (!file_exists('tests')) {
+            mkdir(getcwd() . '/tests', 0777, true);
+        }
 
-        return $check->run();
+        if (!file_exists('db-test.xml.dist')) {
+            copy(__DIR__ . '/files/db-test.xml.dist', getcwd() . '/db-test.xml.dist');
+        }
+
+        if (!file_exists('php-mongo.json')) {
+            copy(__DIR__ . '/files/php-mongo.json.dist', getcwd() . '/php-mongo.json.dist');
+        }
+        echo "Done...\n";
     }
 }

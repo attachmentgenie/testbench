@@ -6,7 +6,7 @@
  *
  * @category Attachmentgenie
  * @package  Testbench
- * @author   Bram Vogelaar <bram@attachmententgenie.com>
+ * @author   Bram Vogelaar <bram@attachmentgenie.com>
  * @license  https://github.com/attachmentgenie/testbench/LICENSE Apache 2.0
  * @link     https://github.com/attachmentgenie/testbench
  */
@@ -25,7 +25,7 @@ use attachmentgenie\testbench\db\TestRunner;
  *
  * @category Attachmentgenie
  * @package  Testbench
- * @author   Bram Vogelaar <bram@attachmententgenie.com>
+ * @author   Bram Vogelaar <bram@attachmentgenie.com>
  * @license  https://github.com/attachmentgenie/testbench/LICENSE Apache 2.0
  * @link     https://github.com/attachmentgenie/testbench
  */
@@ -55,7 +55,7 @@ class DbTestCommand extends Command
     {
         $config = $input->getArgument('config');
         if (is_null($config)) {
-            $config = 'db-test.xml';
+            $config = 'db-test.xml.dist';
         }
 
         Test::check(new TestRunner($config));

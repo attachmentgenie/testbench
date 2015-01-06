@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "68ad8d499e3d6b439a9b0684984f3c55",
+    "hash": "1553c750c770b146d28d66ed4678c5c3",
     "packages": [
         {
             "name": "bylexus/php-prereqcheck",

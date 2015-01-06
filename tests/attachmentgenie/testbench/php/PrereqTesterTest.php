@@ -6,7 +6,7 @@
  *
  * @category Attachmentgenie
  * @package  Testbench
- * @author   Bram Vogelaar <bram@attachmententgenie.com>
+ * @author   Bram Vogelaar <bram@attachmentgenie.com>
  * @license  Apache 2.0
  * @link     https://github.com/attachmentgenie/testbench
  */
@@ -18,7 +18,7 @@ namespace attachmentgenie\testbench\php;
  *
  * @category Attachmentgenie
  * @package  Testbench
- * @author   Bram Vogelaar <bram@attachmententgenie.com>
+ * @author   Bram Vogelaar <bram@attachmentgenie.com>
  * @license  Apache 2.0
  * @link     https://github.com/attachmentgenie/testbench
  */
