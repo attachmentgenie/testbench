@@ -31,17 +31,22 @@ class init
      */
     static function run ()
     {
+        echo "Creating testbench layout...\n";
+        echo "Creating tests directory...\n";
         if (!file_exists('tests')) {
             mkdir(getcwd() . '/tests', 0777, true);
         }
-
+        echo "Done...\n";
+        echo "Creating db-test.xml.dist...\n";
         if (!file_exists('db-test.xml.dist')) {
             copy(__DIR__ . '/files/db-test.xml.dist', getcwd() . '/db-test.xml.dist');
         }
-
-        if (!file_exists('php-mongo.json')) {
+        echo "Done...\n";
+        echo "Creating php-mongo.json.dist...\n";
+        if (!file_exists('php-mongo.json.dist')) {
             copy(__DIR__ . '/files/php-mongo.json.dist', getcwd() . '/php-mongo.json.dist');
         }
         echo "Done...\n";
+        echo "Done creating testbench layout...\n";
     }
 }
