@@ -29,8 +29,8 @@ class Init
     /**
      * Create directories and files to start testbench.
      *
-     * @param $installDir  Directory to install testbench into.
-     * @param $templateDir Template directory to install from.
+     * @param string $installDir  Directory to install testbench into.
+     * @param string $templateDir Template directory to install from.
      *
      * @return void
      */
