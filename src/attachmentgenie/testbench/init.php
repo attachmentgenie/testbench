@@ -31,25 +31,27 @@ class init
      */
     static function run ()
     {
-        echo "Creating testbench layout...\n";
-        echo "Creating tests directory...\n";
-        if (!file_exists('tests')) {
+        echo "Creating tests directory...";
+        if (!file_exists(getcwd() . '/tests')) {
             mkdir(getcwd() . '/tests', 0777, true);
         }
-        if (!file_exists('tests/TestTbT.php')) {
-            copy(__DIR__ . '/files/TestTbT.php', getcwd() . '/tests/TestTbT.php');
+        if (!file_exists(getcwd() . '/tests/testbench')) {
+            mkdir(getcwd() . '/tests/testbench', 0777, true);
         }
-        echo "Done...\n";
-        echo "Creating db-test.xml.dist...\n";
-        if (!file_exists('db-test.xml.dist')) {
+        if (!file_exists(getcwd() . '/tests/testbench/TestTbT.php')) {
+            copy(__DIR__ . '/files/TestTbT.php', getcwd() . '/tests/testbench/TestTbT.php');
+        }
+        echo "Done.\n";
+        echo "Creating db-test.xml.dist...";
+        if (!file_exists(getcwd() . '/db-test.xml.dist')) {
             copy(__DIR__ . '/files/db-test.xml.dist', getcwd() . '/db-test.xml.dist');
         }
-        echo "Done...\n";
-        echo "Creating php-mongo.json.dist...\n";
-        if (!file_exists('php-mongo.json.dist')) {
+        echo "Done.\n";
+        echo "Creating php-mongo.json.dist...";
+        if (!file_exists(getcwd() . '/php-mongo.json.dist')) {
             copy(__DIR__ . '/files/php-mongo.json.dist', getcwd() . '/php-mongo.json.dist');
         }
-        echo "Done...\n";
-        echo "Done creating testbench layout...\n";
+        echo "Done.\n";
+        echo "Finished creating testbench layout...\n";
     }
 }

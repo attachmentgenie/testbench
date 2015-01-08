@@ -7,7 +7,11 @@
 /db-test.xml
 /build/
 /coverage.clover
+
+# testbench
+/db-test.xml.dist
 /db-test.html
+/php-mongo.json.dist
 
 # Composer
 /composer.phar
