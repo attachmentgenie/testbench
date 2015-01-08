@@ -34,7 +34,7 @@ class Test
      *
      * @return boolean|null
      */
-    static function check (Check $check)
+    public static function check(Check $check)
     {
 
         return $check->run();

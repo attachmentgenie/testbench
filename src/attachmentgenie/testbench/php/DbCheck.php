@@ -38,7 +38,7 @@ abstract class DbCheck
      *
      * @param string $config Configuration file
      */
-    function __construct($config)
+    public function __construct($config)
     {
         if (file_exists($config)) {
             $this->config = realpath($config);
@@ -65,19 +65,19 @@ abstract class DbCheck
         $json   =json_decode($string, true);
         foreach ($json as $section => $entries) {
             switch ($section) {
-            case 'registerCheck':
-                foreach ($entries as $name => $className) {
-                    $pc->registerCheck($name, $className);
-                }
-                break;
-            case 'checkMandatory':
-            case 'checkOptional':
-                foreach ($entries as $check) {
-                    call_user_func_array(array(&$pc, $section), $check);
-                }
-                break;
-            default:
-                exit('Unknown section found in config file : ' . $section . "\n");
+                case 'registerCheck':
+                    foreach ($entries as $name => $className) {
+                        $pc->registerCheck($name, $className);
+                    }
+                    break;
+                case 'checkMandatory':
+                case 'checkOptional':
+                    foreach ($entries as $check) {
+                        call_user_func_array(array(&$pc, $section), $check);
+                    }
+                    break;
+                default:
+                    exit('Unknown section found in config file : ' . $section . "\n");
             }
         }
 

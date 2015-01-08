@@ -17,7 +17,7 @@ use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
-use attachmentgenie\testbench\init;
+use attachmentgenie\testbench\Init;
 use attachmentgenie\testbench\Test;
 use attachmentgenie\testbench\db\TestRunner;
 
@@ -53,6 +53,6 @@ class InitCommand extends Command
      */
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        init::run();
+        Init::run(getcwd(), __DIR__ . DIRECTORY_SEPARATOR . 'files');
     }
 }

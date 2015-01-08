@@ -38,7 +38,7 @@ class TestRunner implements Check
      *
      * @param string $config Configuration file
      */
-    function __construct($config)
+    public function __construct($config)
     {
         if (file_exists($config)) {
             $this->config = realpath($config);

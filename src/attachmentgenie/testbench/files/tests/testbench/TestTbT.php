@@ -11,6 +11,8 @@
  * @link     https://github.com/attachmentgenie/testbench
  */
 
+namespace attachmentgenie\testbench\tests;
+
 /**
  * Placeholder test
  *
