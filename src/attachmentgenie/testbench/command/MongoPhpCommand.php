@@ -7,7 +7,7 @@
  * @category Attachmentgenie
  * @package  Testbench
  * @author   Bram Vogelaar <bram@attachmentgenie.com>
- * @license  https://github.com/attachmentgenie/testbench/LICENSE Apache 2.0
+ * @license  https://github.com/attachmentgenie/testbench/LICENSE.md Apache 2.0
  * @link     https://github.com/attachmentgenie/testbench
  */
 
@@ -26,7 +26,7 @@ use attachmentgenie\testbench\php\MongoCheck;
  * @category Attachmentgenie
  * @package  Testbench
  * @author   Bram Vogelaar <bram@attachmentgenie.com>
- * @license  https://github.com/attachmentgenie/testbench/LICENSE Apache 2.0
+ * @license  https://github.com/attachmentgenie/testbench/LICENSE.md Apache 2.0
  * @link     https://github.com/attachmentgenie/testbench
  */
 class MongoPhpCommand extends Command
