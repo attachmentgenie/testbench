@@ -7,16 +7,18 @@
  * @category Attachmentgenie
  * @package  Testbench
  * @author   Bram Vogelaar <bram@attachmentgenie.com>
- * @license  https://github.com/attachmentgenie/testbench/LICENSE.md Apache 2.0
+ * @license  https://github.com/attachmentgenie/testbench/LICENSE Apache 2.0
  * @link     https://github.com/attachmentgenie/testbench
  */
 
 namespace attachmentgenie\testbench\command;
 
 use Symfony\Component\Console\Command\Command;
+use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
-use attachmentgenie\testbench\Init;
+use attachmentgenie\testbench\Test;
+use attachmentgenie\testbench\php\MySQLCheck;
 
 /**
  * Simple test framework.
@@ -24,24 +26,26 @@ use attachmentgenie\testbench\Init;
  * @category Attachmentgenie
  * @package  Testbench
  * @author   Bram Vogelaar <bram@attachmentgenie.com>
- * @license  https://github.com/attachmentgenie/testbench/LICENSE.md Apache 2.0
+ * @license  https://github.com/attachmentgenie/testbench/LICENSE Apache 2.0
  * @link     https://github.com/attachmentgenie/testbench
  */
-class InitCommand extends Command
+class PhpMySQLCommand extends Command
 {
     /**
-     * Setup cli entry to run db tests.
+     * Setup cli entry to run mongo php checks.
      *
      * @return void
      */
     protected function configure()
     {
-        $this->setName('testbench:init')
-            ->setDescription('Create basic testbench setup');
+        $this
+            ->setName('php:mysql')
+            ->setDescription('Check if PHP has been setup for use with mysql')
+            ->addArgument('config', InputArgument::OPTIONAL, 'checks to run');
     }
 
     /**
-     * Run the db:test check
+     * Run the mongo:php check
      *
      * @param InputInterface  $input  CLI input
      * @param OutputInterface $output CLI output
@@ -50,6 +54,15 @@ class InitCommand extends Command
      */
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        Init::run(getcwd(), __DIR__ . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . 'files');
+        $config = $input->getArgument('config');
+        if (is_null($config)) {
+            $config = 'php-mysql.json.dist';
+        }
+
+        if (Test::check(new MySQLCheck($config))) {
+            echo "All tests succeeded!\n";
+        } else {
+            echo "Some tests failed. Please check.\n";
+        }
     }
 }

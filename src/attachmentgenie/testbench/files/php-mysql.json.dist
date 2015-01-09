@@ -1,0 +1,8 @@
+{
+  "registerCheck": [],
+  "checkMandatory": [
+    ["php_version", ">=", "5.3.0"],
+    ["php_extension", "pdo"]
+  ],
+  "checkOptional": []
+}

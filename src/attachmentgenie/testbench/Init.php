@@ -51,7 +51,8 @@ class Init
 
         $files = array('tests' . DIRECTORY_SEPARATOR . 'testbench' . DIRECTORY_SEPARATOR . 'TestTbT.php',
                        'db-test.xml.dist',
-                       'php-mongo.json.dist');
+                       'php-mongo.json.dist',
+                       'php-mysql.json.dist');
         foreach ($files as $filename) {
             echo $c('Creating ' . $filename . '...');
             if (!file_exists($installDir . DIRECTORY_SEPARATOR . $filename)) {

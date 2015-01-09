@@ -29,7 +29,7 @@ use attachmentgenie\testbench\php\MongoCheck;
  * @license  https://github.com/attachmentgenie/testbench/LICENSE.md Apache 2.0
  * @link     https://github.com/attachmentgenie/testbench
  */
-class MongoPhpCommand extends Command
+class PhpMongoCommand extends Command
 {
     /**
      * Setup cli entry to run mongo php checks.
@@ -39,7 +39,7 @@ class MongoPhpCommand extends Command
     protected function configure()
     {
         $this
-            ->setName('mongo:php')
+            ->setName('php:mongo')
             ->setDescription('Check if PHP has been setup for use with mongo')
             ->addArgument('config', InputArgument::OPTIONAL, 'checks to run');
     }

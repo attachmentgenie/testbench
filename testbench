@@ -28,5 +28,6 @@ require TESTBENCH_COMPOSER_INSTALL;
 $app = new \Cilex\Application('testbench', '1.0.0');
 $app->command(new \attachmentgenie\testbench\command\DbTestCommand());
 $app->command(new \attachmentgenie\testbench\command\InitCommand());
-$app->command(new \attachmentgenie\testbench\command\MongoPhpCommand());
+$app->command(new \attachmentgenie\testbench\command\PhpMongoCommand());
+$app->command(new \attachmentgenie\testbench\command\PhpMySQLCommand());
 $app->run();

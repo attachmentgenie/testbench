@@ -40,10 +40,10 @@ abstract class DbCheck
      */
     public function __construct($config)
     {
-        if (file_exists($config)) {
-            $this->config = realpath($config);
-        } elseif (file_exists($config . '.dist')) {
-            $this->config = realpath($config . '.dist');
+        if (file_exists(getcwd() . DIRECTORY_SEPARATOR . $config)) {
+            $this->config = realpath(getcwd() . DIRECTORY_SEPARATOR . $config);
+        } elseif (file_exists(getcwd() . DIRECTORY_SEPARATOR . $config . '.dist')) {
+            $this->config = realpath(getcwd() . DIRECTORY_SEPARATOR . $config . '.dist');
         } elseif (file_exists(dirname(__FILE__) . DIRECTORY_SEPARATOR . $config)) {
             $this->config = realpath(dirname(__FILE__).DIRECTORY_SEPARATOR.$config);
         } else {
