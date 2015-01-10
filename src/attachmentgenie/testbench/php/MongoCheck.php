@@ -7,7 +7,7 @@
  * @category Attachmentgenie
  * @package  Testbench
  * @author   Bram Vogelaar <bram@attachmentgenie.com>
- * @license  https://github.com/attachmentgenie/testbench/LICENSE.md Apache 2.0
+ * @license  https://github.com/attachmentgenie/testbench/LICENSE.md MIT
  * @link     https://github.com/attachmentgenie/testbench
  */
 
@@ -22,7 +22,7 @@ use attachmentgenie\testbench\php\DbCheck;
  * @category Attachmentgenie
  * @package  Testbench
  * @author   Bram Vogelaar <bram@attachmentgenie.com>
- * @license  https://github.com/attachmentgenie/testbench/LICENSE.md Apache 2.0
+ * @license  https://github.com/attachmentgenie/testbench/LICENSE.md MIT
  * @link     https://github.com/attachmentgenie/testbench
  */
 class MongoCheck extends DbCheck implements Check

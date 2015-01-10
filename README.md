@@ -1,7 +1,7 @@
 # testbench
 
 [![Latest Version](https://img.shields.io/github/release/attachmentgenie/testbench.svg?style=flat-square)](https://github.com/attachmentgenie/testbench/releases)
-[![Software License](https://img.shields.io/badge/license-Apache%202.0-brightgreen.svg?style=flat-square)](LICENSE.md)
+[![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.md)
 [![Build Status](https://img.shields.io/travis/attachmentgenie/testbench/master.svg?style=flat-square)](https://travis-ci.org/attachmentgenie/testbench)
 [![Coverage Status](https://img.shields.io/scrutinizer/coverage/g/attachmentgenie/testbench.svg?style=flat-square)](https://scrutinizer-ci.com/g/attachmentgenie/testbench/code-structure)
 [![Quality Score](https://img.shields.io/scrutinizer/g/attachmentgenie/testbench.svg?style=flat-square)](https://scrutinizer-ci.com/g/attachmentgenie/testbench)
@@ -36,8 +36,7 @@ Please see [CONTRIBUTING](https://github.com/attachmentgenie/testbench/blob/mast
 ## Credits
 
 - [Bram Vogelaar](https://github.com/attachmentgenie)
-- [All Contributors](https://github.com/attachmentgenie/testbench/contributors)
 
 ## License
 
-The Apache 2.0. Please see [License File](LICENSE.md) for more information.
+The MIT License (MIT). Please see [License File](LICENSE.md) for more information.

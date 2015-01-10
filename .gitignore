@@ -10,7 +10,6 @@
 
 # testbench
 /db-test.xml.dist
-/db-test.html
 /php-mongo.json.dist
 /php-mysql.json.dist
 /tests/testbench/*

@@ -7,7 +7,7 @@
  * @category Attachmentgenie
  * @package  Testbench
  * @author   Bram Vogelaar <bram@attachmentgenie.com>
- * @license  https://github.com/attachmentgenie/testbench/LICENSE.md Apache 2.0
+ * @license  https://github.com/attachmentgenie/testbench/LICENSE.md MIT
  * @link     https://github.com/attachmentgenie/testbench
  */
 
@@ -24,7 +24,7 @@ use attachmentgenie\testbench\Init;
  * @category Attachmentgenie
  * @package  Testbench
  * @author   Bram Vogelaar <bram@attachmentgenie.com>
- * @license  https://github.com/attachmentgenie/testbench/LICENSE.md Apache 2.0
+ * @license  https://github.com/attachmentgenie/testbench/LICENSE.md MIT
  * @link     https://github.com/attachmentgenie/testbench
  */
 class InitCommand extends Command

@@ -7,7 +7,7 @@
  * @category Attachmentgenie
  * @package  Testbench
  * @author   Bram Vogelaar <bram@attachmentgenie.com>
- * @license  Apache 2.0
+ * @license  https://github.com/attachmentgenie/testbench/LICENSE.md MIT
  * @link     https://github.com/attachmentgenie/testbench
  */
 
@@ -19,7 +19,7 @@ namespace attachmentgenie\testbench;
  * @category Attachmentgenie
  * @package  Testbench
  * @author   Bram Vogelaar <bram@attachmentgenie.com>
- * @license  Apache 2.0
+ * @license  https://github.com/attachmentgenie/testbench/LICENSE.md MIT
  * @link     https://github.com/attachmentgenie/testbench
  */
 interface Check

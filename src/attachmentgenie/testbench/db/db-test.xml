@@ -4,10 +4,6 @@
          strict="true"
          verbose="true">
 
-  <logging>
-    <log type="testdox-html" target="../../../../../../../db-test.html"/>
-  </logging>
-
   <testsuites>
     <testsuite name="testbench">
       <directory suffix="TbT.php">../../../../../../../tests</directory>
