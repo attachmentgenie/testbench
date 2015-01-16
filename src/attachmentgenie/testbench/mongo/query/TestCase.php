@@ -42,7 +42,7 @@ class TestCase extends MongoTestCase
      *
      * @var DataSet
      */
-    protected $dataset;
+    protected $dataSet;
 
     /**
      * Result of explain query
@@ -79,11 +79,11 @@ class TestCase extends MongoTestCase
      */
     public function getDataSet()
     {
-        if (empty($this->dataset)) {
-            $this->dataset = new \Zumba\PHPUnit\Extensions\Mongo\DataSet\DataSet($this->getConnection());
-            $this->dataset->setFixture($this->fixture);
+        if (empty($this->dataSet)) {
+            $this->dataSet = new \Zumba\PHPUnit\Extensions\Mongo\DataSet\DataSet($this->getConnection());
+            $this->dataSet->setFixture($this->fixture);
         }
-        return $this->dataset;
+        return $this->dataSet;
     }
 
     /**
