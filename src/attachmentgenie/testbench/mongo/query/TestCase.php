@@ -13,8 +13,6 @@
 
 namespace attachmentgenie\testbench\mongo\query;
 
-use Zumba\PHPUnit\Extensions\Mongo\Client\Connector;
-use Zumba\PHPUnit\Extensions\Mongo\DataSet\DataSet;
 use attachmentgenie\testbench\mongo\TestCase as MongoTestCase;
 
 /**
