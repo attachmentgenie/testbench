@@ -13,6 +13,8 @@
 
 namespace attachmentgenie\testbench\tests;
 
+use attachmentgenie\testbench\mongo\query\TestCase as QueryTestCase;
+
 /**
  * Placeholder test
  *
@@ -22,7 +24,7 @@ namespace attachmentgenie\testbench\tests;
  * @license  https://github.com/attachmentgenie/testbench/LICENSE.md MIT
  * @link     https://github.com/attachmentgenie/testbench
  */
-class TestTbT extends \PHPUnit_Framework_TestCase
+class TestTbT extends QueryTestCase
 {
     /**
      * Placeholder test
