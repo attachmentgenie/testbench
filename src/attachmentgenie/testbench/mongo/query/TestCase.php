@@ -52,6 +52,13 @@ class TestCase extends MongoTestCase
     protected $explain;
 
     /**
+     * Sample dataset to query
+     * 
+     * @var array
+     */
+    protected $fixture;
+
+    /**
      * Return connection to mongo server.
      *
      * @return Connector
@@ -72,11 +79,11 @@ class TestCase extends MongoTestCase
      */
     public function getDataSet()
     {
-        if (empty($this->dataSet)) {
-            $this->dataSet = new \Zumba\PHPUnit\Extensions\Mongo\DataSet\DataSet($this->getConnection());
-            $this->dataSet->setFixture($this->fixture);
+        if (empty($this->dataset)) {
+            $this->dataset = new \Zumba\PHPUnit\Extensions\Mongo\DataSet\DataSet($this->getConnection());
+            $this->dataset->setFixture($this->fixture);
         }
-        return $this->dataSet;
+        return $this->dataset;
     }
 
     /**
