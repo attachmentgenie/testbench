@@ -28,6 +28,8 @@ use Zumba\PHPUnit\Extensions\Mongo\TestCase as MongoTestCase;
  */
 class TestCase extends MongoTestCase
 {
+    const DEFAULT_DATABASE = 'mongounit_test';
+
     /**
      * Mongo connection.
      *
@@ -43,6 +45,13 @@ class TestCase extends MongoTestCase
     protected $dataset;
 
     /**
+     * Result of explain query
+     *
+     * @var array
+     */
+    protected $explain;
+
+    /**
      * Return connection to mongo server.
      *
      * @return Connector
@@ -50,7 +59,8 @@ class TestCase extends MongoTestCase
     public function getConnection()
     {
         if (empty($this->connection)) {
-            $this->connection = new Connector(new \MongoClient());
+            $this->connection = new \Zumba\PHPUnit\Extensions\Mongo\Client\Connector(new \MongoClient());
+            $this->connection->setDb(static::DEFAULT_DATABASE);
         }
         return $this->connection;
     }
@@ -62,9 +72,60 @@ class TestCase extends MongoTestCase
      */
     public function getDataSet()
     {
-        if (empty($this->dataset)) {
-            $this->dataset = new DataSet($this->getConnection());
+        if (empty($this->dataSet)) {
+            $this->dataSet = new \Zumba\PHPUnit\Extensions\Mongo\DataSet\DataSet($this->getConnection());
+            $this->dataSet->setFixture($this->fixture);
         }
-        return $this->dataset;
+        return $this->dataSet;
+    }
+
+    /**
+     * Make sure the query is actually using a index.
+     *
+     * @return void
+     */
+    public function testCursorIsBtreeCursor()
+    {
+        $this->assertStringStartsWith('BtreeCursor', $this->explain['cursor']);
+    }
+
+    /**
+     * Make sure the entire result set is covered by the index
+     *
+     * @return void
+     */
+    public function testQueryIsIndexOnly()
+    {
+        $this->assertTrue($this->explain['indexOnly']);
+    }
+
+    /**
+     * Multikey indexes currently have some issues.
+     *
+     * @return void
+     */
+    public function testQueryIsNotUsingAMultiKey()
+    {
+        $this->assertFalse($this->explain['isMultiKey']);
+    }
+
+    /**
+     * The mongo manual suggest that queries should return in under 100ms.
+     *
+     * @return void
+     */
+    public function testQueryRunsInUnder100ms()
+    {
+        $this->assertLessThanOrEqual(100, $this->explain['millis']);
+    }
+
+    /**
+     * A good index should return the same N of objects  as N of scanned objects.
+     *
+     * @return void
+     */
+    public function testObjectsScannedEqualsObjectsReturned()
+    {
+        $this->assertEquals($this->explain['n'], $this->explain['nscannedObjects']);
     }
 }
