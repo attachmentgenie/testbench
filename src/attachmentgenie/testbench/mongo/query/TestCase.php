@@ -28,7 +28,7 @@ use Zumba\PHPUnit\Extensions\Mongo\TestCase as MongoTestCase;
  */
 class TestCase extends MongoTestCase
 {
-    const DEFAULT_DATABASE = 'mongounit_test';
+    const DEFAULT_DATABASE = 'testbench';
 
     /**
      * Mongo connection.
