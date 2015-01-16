@@ -28,5 +28,15 @@ use attachmentgenie\testbench\mongo\TestCase as MongoTestCase;
  */
 class TestCase extends MongoTestCase
 {
-
+    /**
+     * Placeholder warning
+     *
+     * @return void
+     */
+    public function testMongoAggregateTestCaseHasNotBeenImplementedYet()
+    {
+        $this->markTestIncomplete(
+            'This test has not been implemented yet.'
+        );
+    }
 }

@@ -1,17 +1,23 @@
-# Welcome to MkDocs
+# Welcome to testbench
 
-For full documentation visit [mkdocs.org](http://mkdocs.org).
+Testbench is a small PHP test framework to investigate slow database queries.
 
-## Commands
+## Install
 
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs help` - Print this help message.
+Via Composer
 
-## Project layout
+``` bash
+$ composer require attachmentgenie/testbench
+```
 
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+## Usage
+
+``` bash
+./vendor/bin/testbench --help
+```
+
+## Testing
+
+``` bash
+$ ./vendor/bin/phpunit -c phpunit.xml.dist
+```

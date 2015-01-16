@@ -24,5 +24,15 @@ namespace attachmentgenie\testbench\mysql\query;
  */
 class TestCase
 {
-
+    /**
+     * Placeholder warning
+     *
+     * @return void
+     */
+    public function testMysqlTestCaseHasNotBeenImplementedYet()
+    {
+        $this->markTestIncomplete(
+            'This test has not been implemented yet.'
+        );
+    }
 }

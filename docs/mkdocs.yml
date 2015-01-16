@@ -1,1 +1,5 @@
-site_name: Testbecnh
+site_name: Testbench
+pages:
+- [index.md, Home]
+- [starting.md, Getting Started]
+- [tests.md, Writing Tests]
