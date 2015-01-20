@@ -51,7 +51,7 @@ class TestCase extends MongoTestCase
      *
      * @return void
      */
-    public function testQueryIsNotUsingAMultiKey()
+    public function testQueryIsNotUsingAMultiKeyIndex()
     {
         $this->assertFalse($this->explain['isMultiKey']);
     }

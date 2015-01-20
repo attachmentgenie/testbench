@@ -2,7 +2,7 @@
 
 ## Initialize testbench environment
 
-``` php
+``` bash
 ./vendor/bin/testbench testbench:init
 ```
 
@@ -11,12 +11,12 @@ This creates a placeholder test and some basic config files within the current d
 
 ## Make sure PHP can use MongoDB
 
-``` php
+``` bash
 ./vendor/bin/testbench php:mongo
 ```
 
 ## Running Test Suite
 
-``` php
+``` bash
 ./vendor/bin/testbench db:test
 ```
