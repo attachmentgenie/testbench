@@ -39,19 +39,42 @@ use attachmentgenie\testbench\mongo\query\TestCase as QueryTestCase;
  */
 class TestTbT extends QueryTestCase
 {
-    public function setUp()
+    /**
+     * Obtain the dataset as specified by the programmer.
+     *
+     * @return array
+     */
+    public function getFixtures()
     {
-        $this->fixture = array(
+        return array(
             'orders' => array(
                 array('size' => 'large', 'toppings' => array('cheese', 'ham')),
                 array('size' => 'medium', 'toppings' => array('cheese'))
             )
         );
-        parent::setUp();
+    }
 
-        $this->getMongoConnection()->collection('orders')
-            ->ensureIndex(array('size' => 1));
+    /**
+     * Obtain the indexes as specified by the programmer.
+     *
+     * @return array
+     */
+    public function getIndexes()
+    {
+        return array(
+            'orders' => array(
+                array('size' => 1)
+            )
+        );
+    }
 
+    /**
+     * Explain query output
+     *
+     * @return array
+     */
+    public function setExplain()
+    {
         $this->explain = $this->getMongoConnection()->collection('orders')->find(array('size' => 'medium'))->explain();
     }
 }

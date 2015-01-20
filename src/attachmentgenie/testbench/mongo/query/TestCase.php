@@ -24,7 +24,7 @@ use attachmentgenie\testbench\mongo\TestCase as MongoTestCase;
  * @license  https://github.com/attachmentgenie/testbench/LICENSE.md MIT
  * @link     https://github.com/attachmentgenie/testbench
  */
-class TestCase extends MongoTestCase
+abstract class TestCase extends MongoTestCase
 {
     /**
      * Make sure the query is actually using a index.

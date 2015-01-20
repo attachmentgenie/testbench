@@ -25,7 +25,7 @@ use Zumba\PHPUnit\Extensions\Mongo\DataSet\DataSet;
  * @license  https://github.com/attachmentgenie/testbench/LICENSE.md MIT
  * @link     https://github.com/attachmentgenie/testbench
  */
-class TestCase extends \PHPUnit_Framework_TestCase
+abstract class TestCase extends \PHPUnit_Framework_TestCase
 {
     use \Zumba\PHPUnit\Extensions\Mongo\TestTrait;
 
@@ -58,6 +58,68 @@ class TestCase extends \PHPUnit_Framework_TestCase
      * @var array
      */
     protected $fixture;
+
+    /**
+     * Setup the colllection, indexes and run the explain query.
+     *
+     * @return void
+     */
+    public function setUp()
+    {
+        $this->setFixture($this->getFixtures());
+        $this->mongoSetUp();
+        $this->setIndexes($this->getIndexes());
+        $this->setExplain();
+    }
+
+    /**
+     * Make dataset available to test setup.
+     *
+     * @param $fixtures Mongo dataset
+     *
+     * @return void
+     */
+    public function setFixture($fixtures)
+    {
+        $this->fixture = $fixtures;
+    }
+
+    /**
+     * Obtain the dataset as specified by the programmer.
+     *
+     * @return array
+     */
+    abstract public function getFixtures();
+
+    /**
+     * Make indexes available to test setup.
+     *
+     * @param $fixtures Mongo indexes
+     *
+     * @return void
+     */
+    public function setIndexes($fixtures)
+    {
+        foreach ($fixtures as $collection => $indexes) {
+            foreach ($indexes as $index) {
+                $this->getMongoConnection()->collection($collection)->ensureIndex($index);
+            }
+        }
+    }
+
+    /**
+     * Obtain the indexes as specified by the programmer.
+     *
+     * @return array
+     */
+    abstract public function getIndexes();
+
+    /**
+     * Explain query output
+     *
+     * @return array
+     */
+    abstract public function setExplain();
 
     /**
      * Return connection to mongo server.
