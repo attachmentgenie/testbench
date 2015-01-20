@@ -81,7 +81,7 @@ class TestCase extends \PHPUnit_Framework_TestCase
     public function getMongoDataSet()
     {
         if (empty($this->dataSet)) {
-            $this->dataSet = new DataSet($this->getConnection());
+            $this->dataSet = new DataSet($this->getMongoConnection());
             $this->dataSet->setFixture($this->fixture);
         }
         return $this->dataSet;
