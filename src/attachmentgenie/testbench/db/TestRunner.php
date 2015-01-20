@@ -14,6 +14,8 @@
 namespace attachmentgenie\testbench\db;
 
 use attachmentgenie\testbench\Check;
+use Colors\Color;
+use PHP_Timer;
 
 /**
  * Simple test framework.
@@ -54,13 +56,17 @@ class TestRunner implements Check
     /**
      * Read configuration file, and run check.
      *
-     * @return boolean|null
+     * @return void
      * @throws \Exception
      */
     public function run()
     {
+        $c = new Color();
 
         $command = new \PHPUnit_TextUI_Command();
+        PHP_Timer::start();
         $command->run(array('--configuration', $this->config, '--testdox'), false);
+        $duration = PHP_Timer::stop();
+        echo $c('Time : ' . PHP_Timer::secondsToTimeString($duration))->bold() . PHP_EOL;
     }
 }
