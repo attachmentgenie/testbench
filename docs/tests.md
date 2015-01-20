@@ -49,10 +49,10 @@ class TestTbT extends QueryTestCase
         );
         parent::setUp();
 
-        $this->getConnection()->collection('orders')
+        $this->getMongoConnection()->collection('orders')
             ->ensureIndex(array('size' => 1));
 
-        $this->explain = $this->getConnection()->collection('orders')->find(array('size' => 'medium'))->explain();
+        $this->explain = $this->getMongoConnection()->collection('orders')->find(array('size' => 'medium'))->explain();
     }
 }
 ```
@@ -62,7 +62,7 @@ then run the testsuite from the command line.
 ./vendor/bin/testbench db:test
 PHPUnit 4.4.2 by Sebastian Bergmann.
 
-Configuration read from /home/attachmentgenie/Personal/testbench/db-test.xml.dist
+Configuration read from /home/attachmentgenie/Projects/testbench/db-test.xml.dist
 
 tests\TestTbT
  [x] Cursor is btree cursor
