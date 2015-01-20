@@ -13,8 +13,6 @@
 
 namespace attachmentgenie\testbench\mysql\query;
 
-use attachmentgenie\testbench\mongo\TestCase as MongoTestCase;
-
 /**
  * Simple test framework.
  *
@@ -24,7 +22,7 @@ use attachmentgenie\testbench\mongo\TestCase as MongoTestCase;
  * @license  https://github.com/attachmentgenie/testbench/LICENSE.md MIT
  * @link     https://github.com/attachmentgenie/testbench
  */
-class TestCase extends MongoTestCase
+abstract class TestCase extends \PHPUnit_Extensions_Database_TestCase
 {
     /**
      * Placeholder warning

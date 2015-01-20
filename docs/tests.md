@@ -31,13 +31,13 @@
 
 namespace tests;
 
-use attachmentgenie\testbench\mongo\query\TestCase as QueryTestCase;
+use attachmentgenie\testbench\mongo\query\TestCase;
 
 /**
  * Placeholder test
  *
  */
-class TestTbT extends QueryTestCase
+class TestTbT extends TestCase
 {
     /**
      * Obtain the dataset as specified by the programmer.
