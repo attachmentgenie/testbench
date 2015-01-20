@@ -19,3 +19,4 @@ This creates a placeholder test and some basic config files within the current d
 
 ``` php
 ./vendor/bin/testbench db:test
+```

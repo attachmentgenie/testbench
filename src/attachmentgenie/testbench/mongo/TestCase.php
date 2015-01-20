@@ -53,7 +53,7 @@ class TestCase extends MongoTestCase
 
     /**
      * Sample dataset to query
-     * 
+     *
      * @var array
      */
     protected $fixture;

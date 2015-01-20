@@ -20,7 +20,7 @@
 
 ## Mongo Explain Test
 
-``` bash
+``` php
 <?php
 /**
  * Placeholder test
@@ -28,6 +28,8 @@
  * PHP version 5
  *
  */
+
+namespace tests;
 
 use attachmentgenie\testbench\mongo\query\TestCase as QueryTestCase;
 
@@ -37,6 +39,20 @@ use attachmentgenie\testbench\mongo\query\TestCase as QueryTestCase;
  */
 class TestTbT extends QueryTestCase
 {
+    public function setUp()
+    {
+        $this->fixture = array(
+            'orders' => array(
+                array('size' => 'large', 'toppings' => array('cheese', 'ham')),
+                array('size' => 'medium', 'toppings' => array('cheese'))
+            )
+        );
+        parent::setUp();
 
+        $this->getConnection()->collection('orders')
+            ->ensureIndex(array('size' => 1));
+
+        $this->explain = $this->getConnection()->collection('orders')->find(array('size' => 'medium'))->explain();
+    }
 }
 ```

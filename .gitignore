@@ -17,6 +17,9 @@
 # Composer
 /composer.phar
 
+#mkdocs
+/site/
+
 # ide
 /.project
 /.idea/
