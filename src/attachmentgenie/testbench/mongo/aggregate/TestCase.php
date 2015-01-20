@@ -13,6 +13,8 @@
 
 namespace attachmentgenie\testbench\mongo\aggregate;
 
+use attachmentgenie\testbench\mongo\TestCase as MongoTestCase;
+
 /**
  * Simple test framework.
  *
@@ -22,8 +24,9 @@ namespace attachmentgenie\testbench\mongo\aggregate;
  * @license  https://github.com/attachmentgenie/testbench/LICENSE.md MIT
  * @link     https://github.com/attachmentgenie/testbench
  */
-class TestCase extends PHPUnit_Extensions_Database_TestCase
+class TestCase extends MongoTestCase
 {
+    use \Zumba\PHPUnit\Extensions\Mongo\TestTrait;
     /**
      * Placeholder warning
      *
@@ -34,15 +37,5 @@ class TestCase extends PHPUnit_Extensions_Database_TestCase
         $this->markTestIncomplete(
             'This test has not been implemented yet.'
         );
-    }
-
-    protected function getConnection()
-    {
-
-    }
-
-    protected function getDataSet()
-    {
-
     }
 }

@@ -15,7 +15,6 @@ namespace attachmentgenie\testbench\mongo;
 
 use Zumba\PHPUnit\Extensions\Mongo\Client\Connector;
 use Zumba\PHPUnit\Extensions\Mongo\DataSet\DataSet;
-use Zumba\PHPUnit\Extensions\Mongo\TestCase as MongoTestCase;
 
 /**
  * Simple test framework.
@@ -26,8 +25,10 @@ use Zumba\PHPUnit\Extensions\Mongo\TestCase as MongoTestCase;
  * @license  https://github.com/attachmentgenie/testbench/LICENSE.md MIT
  * @link     https://github.com/attachmentgenie/testbench
  */
-class TestCase extends MongoTestCase
+class TestCase extends \PHPUnit_Framework_TestCase
 {
+    use \Zumba\PHPUnit\Extensions\Mongo\TestTrait;
+
     const DEFAULT_DATABASE = 'testbench';
 
     /**
@@ -63,10 +64,10 @@ class TestCase extends MongoTestCase
      *
      * @return Connector
      */
-    public function getConnection()
+    public function getMongoConnection()
     {
         if (empty($this->connection)) {
-            $this->connection = new \Zumba\PHPUnit\Extensions\Mongo\Client\Connector(new \MongoClient());
+            $this->connection = new Connector(new \MongoClient());
             $this->connection->setDb(static::DEFAULT_DATABASE);
         }
         return $this->connection;
@@ -77,10 +78,10 @@ class TestCase extends MongoTestCase
      *
      * @return DataSet
      */
-    public function getDataSet()
+    public function getMongoDataSet()
     {
         if (empty($this->dataSet)) {
-            $this->dataSet = new \Zumba\PHPUnit\Extensions\Mongo\DataSet\DataSet($this->getConnection());
+            $this->dataSet = new DataSet($this->getConnection());
             $this->dataSet->setFixture($this->fixture);
         }
         return $this->dataSet;
