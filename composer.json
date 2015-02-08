@@ -11,7 +11,7 @@
     "require": {
         "cilex/cilex": "~1.1",
         "ext-mongo": "~1.5",
-        "phpunit/phpunit": "~4.4",
+        "phpunit/phpunit": "~4.5",
         "zumba/mongounit": "~1.2",
         "bylexus/php-prereqcheck": "0.2.*",
         "kevinlebrun/colors.php": "0.4.*",
