@@ -26,7 +26,7 @@ $ composer require attachmentgenie/testbench
 ## Testing
 
 ``` bash
-$ ./vendor/bin/phpunit -c phpunit.xml.dist
+$ ./bin/phpunit -c phpunit.xml.dist
 ```
 
 ## Contributing
