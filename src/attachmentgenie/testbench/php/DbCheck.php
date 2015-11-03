@@ -46,8 +46,6 @@ abstract class DbCheck
             $this->config = realpath(getcwd() . DIRECTORY_SEPARATOR . $config . '.dist');
         } elseif (file_exists(dirname(__FILE__) . DIRECTORY_SEPARATOR . $config)) {
             $this->config = realpath(dirname(__FILE__).DIRECTORY_SEPARATOR.$config);
-        } else {
-            exit("Can not find a set of checks to run.\n");
         }
     }
 
@@ -59,10 +57,14 @@ abstract class DbCheck
      */
     public function run()
     {
-        $pc = new PrereqChecker();
-
+        if (is_null($this->config)) {
+            exit("Can not find a set of checks to run.\n");
+        }
         $string = file_get_contents($this->config);
         $json   =json_decode($string, true);
+
+        $pc = new PrereqChecker();
+
         foreach ($json as $section => $entries) {
             switch ($section) {
                 case 'registerCheck':

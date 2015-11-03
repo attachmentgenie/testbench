@@ -48,8 +48,6 @@ class TestRunner implements Check
             $this->config = realpath($config . '.dist');
         } elseif (file_exists(dirname(__FILE__) . DIRECTORY_SEPARATOR . $config)) {
             $this->config = realpath(dirname(__FILE__).DIRECTORY_SEPARATOR.$config);
-        } else {
-            exit("Can not find a set of checks to run.\n");
         }
     }
 
@@ -61,12 +59,16 @@ class TestRunner implements Check
      */
     public function run()
     {
-        $c = new Color();
+        if (is_null($this->config)) {
+            exit("Can not find a set of checks to run.\n");
+        }
 
-        $command = new \PHPUnit_TextUI_Command();
         PHP_Timer::start();
+        $command = new \PHPUnit_TextUI_Command();
         $command->run(array('--configuration', $this->config, '--testdox'), false);
         $duration = PHP_Timer::stop();
+
+        $c = new Color();
         echo $c('Time : ' . PHP_Timer::secondsToTimeString($duration))->bold() . PHP_EOL;
     }
 }
